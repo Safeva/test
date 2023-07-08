@@ -7,8 +7,6 @@ COPY package.json /app/
 COPY server.js /app/
 
 RUN apt-get update &&\
-    apt-get install -y iproute2 &&\
-    npm install &&\
-    npm install -g pm2
+    npm install
 
 ENTRYPOINT [ "node", "server.js" ]
